@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Medical Database System</title>
+</head>
+<body>
+<header>
+    <div class="logo-wrap">
+        <a th:href="@{/index}"><img th:src="@{images/heartbeat.png}"></a>
+        <h3>MediCarePlanner</h3>
+    </div>
+    <nav>
+        <!in href you must put the request info to redirect>
+        <a th:href="@{/about}">ABOUT US</a>
+        <a th:href="@{/showPatientForm}">SEARCH DOCTOR</a>
+        <a href="#">CONTACT US</a>
+    </nav>
+</header>
+
+<div class="main">
+    <div class="info-wrap">
+        <div class="about-column">
+            <span class="about-headLine">Who are we?</span>
+            <br>
+            <img th:src="@{images/doctor.png}">
+            <br>
+            <span class="about-text">We are a company that provides you with medical assistance all over the world. Your
+                health is just one click away!
+            </span>
+        </div>
+
+        <div class="about-column">
+            <span class="about-headLine">Who we help?</span>
+            <br>
+            <img th:src="@{images/clinic.png}">
+            <br>
+            <span class="about-text">We are aimed to help patients from accross the globe find the perfect medical treatment for themselves and
+                their loved ones!
+            </span>
+        </div>
+
+        <div class="about-column">
+            <span class="about-headLine">How to apply?</span>
+            <br>
+            <img th:src="@{images/health-report.png}">
+            <br>
+            <span class="about-text">Please fill in the medical form that will help our doctors plan the perfect treatment plan for you.
+                We contact our patients within 24 hours!
+            </span>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer">
+
+</footer>
+</body>
+</html>

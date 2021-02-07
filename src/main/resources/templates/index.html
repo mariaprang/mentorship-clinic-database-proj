@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Medical Database System</title>
+</head>
+<body>
+<header>
+    <div class="logo-wrap">
+        <a th:href="@{/index}"><img th:src="@{images/heartbeat.png}"></a>
+        <h3>MediCarePlanner</h3>
+    </div>
+    <nav>
+        <!--in href you must put the request info to redirect-->
+        <a th:href="@{/about}">ABOUT US</a>
+        <a th:href="@{/showPatientForm}">SEARCH DOCTOR</a>
+        <a href="#">CONTACT US</a>
+    </nav>
+</header>
+<div class="container">
+    <div class="heading-tag">
+        <h2 id="tag1">MEDICARE PLANNER</h2>
+        <h4 id="tag2">FIND THE RIGHT DOCTOR FOR YOUR NEED</h4>
+    </div>
+    <div  class="doctor-wrap-row">
+        <form th:action="@{/showDoctorInquiry}">
+            <div th:each="doctor: ${allDoctors}" class="doctor-info">
+
+                <!-- THE THYMLEAF FOR FORLOOP COME WITH $SIGN AND THE EXACT
+                 NAME OF OBJECT AND VARIABLE-->
+                <img th:src="${doctor.imageURL}" class="doc-img">
+                <br>
+                <span th:text="${doctor.name}" class="doc-name"></span>
+                <br>
+                <span th:text="${'Specialty: '+ doctor.specialty}" class="doc-specialty"></span>
+                <br>
+                <span th:text="${'Clinic: '+ doctor.clinicName}" class="doc-clinic"></span>
+                <br>
+
+                <input type="hidden" name="doctor-name" th:value="${doctor.name}">
+                <input class="search-doc" type="submit" value="Contact">
+
+            </div>
+        </form>
+    </div>
+
+</div>
+<footer th:replace="fragments/footer :: footer">
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <title>Medical Database System</title>
+</head>
+<body>
+<header>
+    <div class="logo-wrap">
+        <a th:href="@{/index}"><img th:src="@{images/heartbeat.png}"></a>
+        <h3>MediCarePlanner</h3>
+    </div>
+    <nav>
+        <!in href you must put the request info to redirect>
+        <a th:href="@{/about}">ABOUT US</a>
+        <a th:href="@{/showPatientForm}">SUBMIT FORM</a>
+        <a href="#">CONTACT US</a>
+    </nav>
+</header>
+
+<div class="main">
+
+    <div class="contact-container">
+        <div class="icon-container">
+
+        </div>
+        <div class="form-container">
+            <form>
+                <label>Please input your contact info so that</label>
+            </form>
+        </div>
+    </div>
+
+</div>
+<footer th:replace="fragments/footer :: footer">
+
+</footer>
+</body>
+</html>

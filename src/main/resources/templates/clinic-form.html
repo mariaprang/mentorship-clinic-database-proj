@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Medical Database System</title>
+</head>
+<body>
+<header>
+    <div class="logo-wrap">
+        <a th:href="@{/index}"><img th:src="@{images/heartbeat.png}"></a>
+        <h3>MediCarePlanner</h3>
+    </div>
+    <nav>
+        <!in href you must put the request info to redirect>
+        <a th:href="@{/about}">ABOUT US</a>
+        <a href="#">SEARCH DOCTOR</a>
+        <a href="#">CONTACT US</a>
+    </nav>
+</header>
+
+<div class="main">
+    <div class="container">
+        <form id="contact" th:action="@{/acceptPatientForm}" method="post">
+            <h3>Search Your Doctor</h3>
+            <h4>Fill this form in and make sure to mention all the details</h4>
+            <fieldset>
+                <input placeholder="First name" name="first-name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Last name" name="last-name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" name="email" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="The diagnosis you'd like to get treatment for" name="diagnosis" type="text" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Country" name="country" type="text" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<footer th:replace="fragments/footer :: footer">
+
+</footer>
+</body>
+</html>
